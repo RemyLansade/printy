@@ -1,0 +1,14 @@
+
+<section class="modal">
+  <div class="tab-container">
+    <div class="tab login" (click)="setActiveTab($event)" [style.background-color]="activeTab == 'login' ? 'white' : '#e0e0e0'">
+      <p>Se connecter</p>
+    </div>
+    <div class="tab register" (click)="setActiveTab($event)" [style.background-color]="activeTab == 'register' ? 'white' : '#e0e0e0'">
+      <p>S'enregistrer</p>
+    </div>
+  </div>
+  <register-form *ngIf="activeTab == 'register'"/>
+  <login-form *ngIf="activeTab =='login'" />
+  <button class="close-button" (click)="closeConnexionModal()">X</button>
+</section>

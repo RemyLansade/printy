@@ -1,0 +1,101 @@
+.navbar-container {
+  display: block;
+  width: 100%;
+  height: 5rem;
+  background-color: #f1f1f1;
+  box-shadow: #bbbbbb 1px 1px 25px;
+}
+
+.navbar-links {
+  display: flex;
+  width: 95%;
+  margin: auto;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+a {
+  color: #505050;
+  display: block;
+  position: relative;
+  text-decoration: none;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: #fc7000;
+  border-radius: 4px 4px 0 0;
+  box-shadow: #ff7000 2px 2px 25px;
+  bottom: -2rem;
+  left: 0;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #fc7000;
+  cursor: pointer;
+}
+
+a:hover::after {
+  opacity: 100;
+}
+
+.active-link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: #fc7000;
+  border-radius: 4px 4px 0 0;
+  box-shadow: #ff7000 2px 2px 25px;
+  bottom: -1.9em;
+  left: 0;
+  opacity: 100;
+  transition: 0.3s;
+}
+
+#logo {
+  color: #fc7000;
+  transition: 0.3s;
+}
+
+#logo:hover {
+  color: #cc5b00;
+  cursor: pointer;
+}
+
+.profil-avatar {
+  display: block;
+  background-color: #ff6d00;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100%;
+}
+
+.profil-avatar:hover {
+  cursor: pointer;
+}
+
+button {
+  display: block;
+  background-color: #fc7000;
+  border: none;
+  height: 3rem;
+  width: 6rem;
+  align-items: center;
+  text-align: center;
+  border-radius: 0.2rem;
+  color: #FFFFFF;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #cc5b00;
+  cursor: pointer;
+}
+
