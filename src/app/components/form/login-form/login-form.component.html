@@ -1,7 +1,9 @@
 <form action="/login" method="post" [formGroup]="loginUser">
-  <label>Email</label>
-  <input type="email" formControlName="email" placeholder="Email" required email="true" />
-  <label>Mot de passe</label>
-  <input type="password" formControlName="password" placeholder="Mot de passe" required />
-  <button type="submit" [disabled]="!loginUser.valid">Se connecter</button>
+  <div class="form-content" >
+    <label for="email">Email</label>
+    <input id="email" type="email" formControlName="email" placeholder="Email" required email="true" />
+    <label for="password">Mot de passe</label>
+    <input id="password" type="password" formControlName="password" placeholder="Mot de passe" required />
+    <button type="submit" [disabled]="!loginUser.valid">Se connecter</button>
+  </div>
 </form>

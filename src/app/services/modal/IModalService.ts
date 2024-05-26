@@ -1,4 +1,7 @@
+import { OverlayRef } from "@angular/cdk/overlay";
+
 export interface IModalService {
-  show():void;
-  hide():void;
+  overlayRef: OverlayRef
+  show(): void;
+  hide(): void;
 }

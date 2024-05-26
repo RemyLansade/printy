@@ -1,6 +1,7 @@
-import {Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from "@angular/router";
-import {ConnexionModalService} from "../../services/modal/connexion-modal/connexion-modal.service";
+
+import { ConnexionModalService } from "../../services/modal/connexion-modal/connexion-modal.service";
 
 @Component({
   selector: 'app-navbar',
@@ -19,5 +20,4 @@ export class NavbarComponent {
   openConnexionModal() {
     this.connexionModalService.show();
   }
-
 }

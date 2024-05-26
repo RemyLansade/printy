@@ -6,6 +6,8 @@ import { ConnexionModalService } from "../../services/modal/connexion-modal/conn
 import { RegisterFormComponent } from "../form/register-form/register-form.component";
 import { LoginFormComponent } from "../form/login-form/login-form.component";
 
+type ActiveTabSelector = "login" | "register";
+
 @Component({
   selector: 'connexion-modal',
   standalone: true,
@@ -19,7 +21,7 @@ import { LoginFormComponent } from "../form/login-form/login-form.component";
 })
 export class ConnexionModalComponent {
 
-  activeTab: "login" | "register" = "login";
+  activeTab: ActiveTabSelector = "login";
 
   constructor(private connexionModalService: ConnexionModalService) {
   }
