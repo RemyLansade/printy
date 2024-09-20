@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 import { NgIf } from "@angular/common";
 
-import { ConnexionModalService } from "../../services/modal/connexion-modal/connexion-modal.service";
-
-import { RegisterFormComponent } from "../form/register-form/register-form.component";
-import { LoginFormComponent } from "../form/login-form/login-form.component";
+import { RegisterFormComponent } from "../forms/register-form/register-form.component";
+import { LoginFormComponent } from "../forms/login-form/login-form.component";
 
 type ActiveTabSelector = "login" | "register";
 
@@ -22,13 +20,6 @@ type ActiveTabSelector = "login" | "register";
 export class ConnexionModalComponent {
 
   activeTab: ActiveTabSelector = "login";
-
-  constructor(private connexionModalService: ConnexionModalService) {
-  }
-
-  closeConnexionModal() {
-    this.connexionModalService.hide();
-  }
 
   setActiveTab(value: any) {
     const catchValue = value.target.innerHTML;

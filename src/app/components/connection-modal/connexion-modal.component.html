@@ -7,7 +7,11 @@
       <p>S'enregistrer</p>
     </div>
   </div>
-  <register-form *ngIf="activeTab == 'register'"/>
-  <login-form *ngIf="activeTab =='login'" />
-  <button class="close-button" (click)="closeConnexionModal()">X</button>
+
+  @if(activeTab == 'register') {
+    <register-form />
+  }
+  @if(activeTab =='login') {
+    <login-form />
+  }
 </section>

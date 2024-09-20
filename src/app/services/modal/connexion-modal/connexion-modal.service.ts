@@ -1,31 +1,31 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Overlay } from "@angular/cdk/overlay";
 import { ComponentPortal } from "@angular/cdk/portal";
 
 import { ConnexionModalComponent } from "../../../components/connection-modal/connexion-modal.component";
-import { IModalService } from "../IModalService";
 
 @Injectable({
   providedIn: 'root'
 })
-export class ConnexionModalService implements IModalService {
+export class ConnexionModalService {
 
-  overlayRef = this.overlay.create({
-    positionStrategy: this.overlay
-      .position()
-      .global()
-      .centerHorizontally()
-      .centerVertically(),
-    hasBackdrop: true,
-  })
+  overlayRef;
+  overlay = inject(Overlay);
 
-  constructor(private overlay: Overlay) {}
+  constructor() {
+    this.overlayRef = this.overlay.create({
+      positionStrategy: this.overlay
+        .position()
+        .global()
+        .centerHorizontally()
+        .centerVertically(),
+      hasBackdrop: true,
+    });
+
+    this.overlayRef.backdropClick().subscribe(() => this.overlayRef.detach());
+  }
 
   show() {
     this.overlayRef.attach(new ComponentPortal(ConnexionModalComponent));
-  }
-
-  hide() {
-    this.overlayRef.detach();
   }
 }

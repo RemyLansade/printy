@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from "@angular/router";
 
 import { ConnexionModalService } from "../../services/modal/connexion-modal/connexion-modal.service";
@@ -15,9 +15,9 @@ import { ConnexionModalService } from "../../services/modal/connexion-modal/conn
 })
 export class NavbarComponent {
 
-  constructor(private connexionModalService: ConnexionModalService) {}
+  modal = inject(ConnexionModalService)
 
   openConnexionModal() {
-    this.connexionModalService.show();
+    this.modal.show();
   }
 }
